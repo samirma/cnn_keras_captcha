@@ -47,6 +47,7 @@ def get_model(input_shape):
         # Fully connected layer
         model.add(Flatten())
         model.add(Dense(1024*MAX_CAPTCHA))
+        model.add(Dropout(0.25))
         model.add(Dense(512*MAX_CAPTCHA))
         model.add(Activation('relu'))
         model.add(Dropout(0.25))
